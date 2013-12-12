@@ -37,6 +37,8 @@ var myAppConfig = angular.module('myAppConfig', ['ngCookies','ngResource', 'anal
     $routeProvider.when('/tournament-grpjoin', {templateUrl: 'partials/tournament_grpjoin.html', controller: IndexController});
     $routeProvider.when('/tournament-grpplay', {templateUrl: 'partials/tournament_grpplay.html', controller: IndexController});
     $routeProvider.when('/tournament-ranking', {templateUrl: 'partials/tournament_ranking.html', controller: IndexController});
+	$routeProvider.when('/mbcoaching', {templateUrl: 'partials/mbcoaching.html', controller: IndexController});
+	$routeProvider.when('/mbcoaching-play', {templateUrl: 'partials/mbcoaching_play.html', controller: IndexController});
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
