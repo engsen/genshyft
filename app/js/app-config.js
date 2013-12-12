@@ -31,6 +31,12 @@ var myAppConfig = angular.module('myAppConfig', ['ngCookies','ngResource', 'anal
     $routeProvider.when('/schoolregistration', {templateUrl: 'partials/schoolregistration.html', controller: IndexController});
     $routeProvider.when('/schoolregistrationstats', {templateUrl: 'partials/schoolregistrationstats.html', controller: IndexController});
     $routeProvider.when('/schoolsmap', {templateUrl: 'partials/schoolsmap.html', controller: IndexController});
+    $routeProvider.when('/mytournaments', {templateUrl: 'partials/mytournaments.html', controller: IndexController});
+    $routeProvider.when('/mytournaments-create', {templateUrl: 'partials/mytournaments_create.html', controller: IndexController});
+    $routeProvider.when('/mytournaments-manage', {templateUrl: 'partials/mytournaments_manage.html', controller: IndexController});
+    $routeProvider.when('/tournament-grpjoin', {templateUrl: 'partials/tournament_grpjoin.html', controller: IndexController});
+    $routeProvider.when('/tournament-grpplay', {templateUrl: 'partials/tournament_grpplay.html', controller: IndexController});
+    $routeProvider.when('/tournament-ranking', {templateUrl: 'partials/tournament_ranking.html', controller: IndexController});
     $routeProvider.otherwise({redirectTo: '/home'});
 }]);
 
