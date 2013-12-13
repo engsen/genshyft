@@ -42,9 +42,9 @@ var purposeDrivenVideos = {"Videos":[
 	{"title":"Purpose Driven Part E",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 4.jpg",
 	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for E"}
+	"description":"This is test Data for E"}   
 	]};
-	$httpBackend.whenGET('/jsonapi/purposeVideos/ALL').respond(schools);
+	$httpBackend.whenGET('/jsonapi/purposeVideos/ALL').respond(purposeDrivenVideos);
 	  
 	  
 	  
