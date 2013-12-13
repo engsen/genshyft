@@ -1,6 +1,10 @@
 function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
+
+
+
+
 	
-	    $scope.player = $resource('/jsonapi/player').get();
+	  /* $scope.player = $resource('/jsonapi/player').get();
 
 	    $scope.myVideos = 
 	    [ 
@@ -12,12 +16,25 @@ function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
 	    ];
 
 	     	$scope.totalVideosUnlock =2;
-
+*/
 	
+
+	     $scope.get_videos = function(){
+          console.log("get_purpose driven videos");
+          $resource("/jsonapi/purposeVideos/ALL").get({},function(response){
+              $scope.purposeVideos = response;
+               console.log($scope.purposeVideos);
+        	 })
+        }
 
 
 
 
 	  //  $scope.myVideos[0] {vName:"videoTitle1",vStatus:"unlock",};
+
+
+
+
+
 
 	};

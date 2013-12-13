@@ -23,48 +23,33 @@
 
 
 
-  	<div data-ng-controller="PurposeDrivenController" > 
- {{ myVideos[0].vStatus }} {{ myVideos[1].vStatus }} {{ myVideos[2].vStatus }} {{ myVideos[3].vStatus }}
+  	<div data-ng-controller="PurposeDrivenController" ng-init = "get_videos()" > 
+
+  		<select ng-model="videoID" ng-options= "video.id as video.title for video in purposeVideos.Videos | orderBy:'title'"></select>
+
 	<center>
 	Select a video to view !
 
 
-		<table border = '1' width = 50%> 
+		<table border = '1' width = 60%> 
 			<tr>
-				<td width =  10% >
-						<a href = "#/purposedriven-play?v=1" > <IMG ng-src="{{ myVideos[0].img }}" width = '150px' > </IMG> </a>	
-				
-										
+				<td  ng-repeat = "video in purposeVideos.Videos" >
+						<a href = " #/purposedriven-play?title= + {{ video.title }}" > <IMG ng-src="{{ video.image }}" width = 300px' > </IMG> </a>	
 				</td>
-				<td width =  10%>
 
-					
-					<a href = "#/purposedriven-play">  <IMG ng-src="{{ myVideos[1].img }}" width = '150px' > </IMG> </a>		
-					
-
-				</td>
-				<td width =  10%>
-					<a href = "#/purposedriven-play"> <IMG ng-src="{{ myVideos[2].img }}" width = '150px' > </IMG> </a>	
-
-
-				</td>
-				<td width =  10%>
-
-					<a href = "#/purposedriven-play">  <IMG ng-src="{{ myVideos[3].img }}" width = '150px' > </IMG> </a>	
-		
-				</td>
 
 			</tr>			
 				<tr >
-					<td ng-repeat ="videos in myVideos">
-						
-						{{ videos.desc}}
-						</p>				
+					<td  ng-repeat = "video in purposeVideos.Videos" >
+							 {{ video.description }}
 					</td>
-				
+					
 				</tr>
 
 		</table>
 	</center>
 </div>
   	
+<script>
+
+</script>

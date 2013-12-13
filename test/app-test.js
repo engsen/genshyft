@@ -21,27 +21,27 @@ myApp.run(function($httpBackend) {
 var purposeDrivenVideos = {"Videos":[
 	{"title":"Purpose Driven Part A",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 1.jpg",
-	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
+	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
 	"description":"This is test Data for A"},
 
 	{"title":"Purpose Driven Part B",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 2.jpg",
-	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
+	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
 	"description":"This is test Data for B"},
 
 	{"title":"Purpose Driven Part C",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 3.jpg",
-	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
+	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
 	"description":"This is test Data for C"},
 
 	{"title":"Purpose Driven Part D",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 4.jpg",
-	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
+	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
 	"description":"This is test Data for D"},
 
 	{"title":"Purpose Driven Part E",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 4.jpg",
-	"link":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
+	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
 	"description":"This is test Data for E"}   
 	]};
 	$httpBackend.whenGET('/jsonapi/purposeVideos/ALL').respond(purposeDrivenVideos);
