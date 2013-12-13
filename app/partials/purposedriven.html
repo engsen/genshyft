@@ -1,11 +1,12 @@
-<html ng-app>
-  <head>
-    <script src="http://code.angularjs.org/1.2.3/angular.min.js"></script>
-  </head>
-  <body>
-  <br><br> <center> <h1> Purpose Driven Videos</h1> </center> 
 
-<div class="container" id="tournament" style="position:relative;">
+
+
+
+ 
+
+  <br> <center> <h1> Purpose Driven Videos</h1> </center> 
+
+<div class="container" style="position:relative;">
 	<div class="row-fluid">
 		<center> 
 			<table border = '1' width = 50%>
@@ -20,47 +21,50 @@
 	</div>
 <div>
 
-<div>
-<center>
-Select a video to view !
 
-	<table border = '1' width = 50%> 
-		<tr>
-			<td width =  10%>
-				<a href = "#/purposedriven-play"> <IMG ng-src="img/purposedrivenPlaceholder/Purpose Driven 1.jpg" width = '150px' > </IMG> </a>			
-									
-			</td>
-			<td width =  10%>
-				<a href = "#/purposedriven-play"> <IMG ng-src="img/purposedrivenPlaceholder/Purpose Driven 2.jpg" width = '150px' > </IMG> </a>		
 
-			</td>
-			<td width =  10%>
-				<a href = "#/purposedriven-play"> <IMG ng-src="img/purposedrivenPlaceholder/Purpose Driven 3.jpg" width = '150px' > </IMG> </a>	
+  	<div data-ng-controller="PurposeDrivenController" > 
+ {{ myVideos[0].vStatus }} {{ myVideos[1].vStatus }} {{ myVideos[2].vStatus }} {{ myVideos[3].vStatus }}
+	<center>
+	Select a video to view !
 
-			</td>
-			<td width =  10%>
-				<a href = "#/purposedriven-play"> <IMG ng-src="img/purposedrivenPlaceholder/Purpose Driven 4.jpg" width = '150px' > </IMG> </a>				
-			</td>
-		</tr>			
+
+		<table border = '1' width = 50%> 
 			<tr>
-				<td>
-					Watch how Singpath owner plans to change the world !				
+				<td width =  10% >
+						<a href = "#/purposedriven-play?v=1" > <IMG ng-src="{{ myVideos[0].img }}" width = '150px' > </IMG> </a>	
+				
+										
 				</td>
-				<td>
-					Microsoft talks about coding.				
-				</td>
-				<td>
-					<font color = 'red'> Video is locked </font>					
-				</td>
-				<td>
-					<font color = 'red'> Video is locked </font>			
-				</td>				
-			</tr>
-			
+				<td width =  10%>
 
+					
+					<a href = "#/purposedriven-play">  <IMG ng-src="{{ myVideos[1].img }}" width = '150px' > </IMG> </a>		
+					
+
+				</td>
+				<td width =  10%>
+					<a href = "#/purposedriven-play"> <IMG ng-src="{{ myVideos[2].img }}" width = '150px' > </IMG> </a>	
+
+
+				</td>
+				<td width =  10%>
+
+					<a href = "#/purposedriven-play">  <IMG ng-src="{{ myVideos[3].img }}" width = '150px' > </IMG> </a>	
 		
+				</td>
 
-	</table>
-</center>
+			</tr>			
+				<tr >
+					<td ng-repeat ="videos in myVideos">
+						
+						{{ videos.desc}}
+						</p>				
+					</td>
+				
+				</tr>
+
+		</table>
+	</center>
 </div>
-</body>
+  	
