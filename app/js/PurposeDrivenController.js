@@ -28,6 +28,18 @@ function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
         }
 
 
+	     $scope.get_videos_unlocked = function(){
+          console.log("get_purpose driven videos unlocked");
+          $resource("/jsonapi/purposeVideos/CURRENT").get({},function(response){
+              $scope.purposeVideosUnlocked = response;
+               console.log($scope.purposeVideosUnlocked);
+        	 })
+        }        
+
+        $scope.testing = function() {
+        	alert("Need to unlock this testing");
+
+        }
 
 
 	  //  $scope.myVideos[0] {vName:"videoTitle1",vStatus:"unlock",};

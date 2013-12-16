@@ -22,32 +22,44 @@ var purposeDrivenVideos = {"Videos":[
 	{"title":"Purpose Driven Part A",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 1.jpg",
 	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for A"},
+	"description":"This is test Data for A",
+	"no":"1"},
 
 	{"title":"Purpose Driven Part B",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 2.jpg",
 	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for B"},
+	"description":"This is test Data for B",
+	"no":"2"},
 
 	{"title":"Purpose Driven Part C",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 3.jpg",
 	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for C"},
+	"description":"This is test Data for C",
+	"no":"3"},
 
 	{"title":"Purpose Driven Part D",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 4.jpg",
 	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for D"},
+	"description":"This is test Data for D",
+	"no":"4"},
 
 	{"title":"Purpose Driven Part E",
 	"image":"img/purposedrivenPlaceholder/Purpose Driven 4.jpg",
 	"vlink":"http://www.youtube.com/watch?v=9FY8hl6b54A&list=FLLgpXMdyzLkkXb9TSDiuyZA",
-	"description":"This is test Data for E"}   
+	"description":"This is test Data for E"
+	,"no":"5"}   
 	]};
 	$httpBackend.whenGET('/jsonapi/purposeVideos/ALL').respond(purposeDrivenVideos);
 	  
-	  
-	  
+	
+var videosUnlock = {"Unlocked":[
+	{"1":"unlock",
+	"2":"unlock",
+	"3":"lock",
+	"4":"lock"}
+	]};
+	
+	$httpBackend.whenGET('/jsonapi/purposeVideos/CURRENT').respond(videosUnlock);
 	  
 	  
 	  
