@@ -1,28 +1,35 @@
+
+
 function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
 
 
+    // this method gets the parameter , variables are declared as youtube and vno
+    $scope.location = $location;
+
+    $scope.$watch('location.search()', function() {
+        $scope.you = ($location.search()).youtube;
+        $scope.tube = $scope.you.split("watch?v=");
+        $scope.youtube = $scope.tube[1].split("&list=");
+       // $scope.youtube = $scope.tube.split("list=");
+        console.log($scope.youtube);
+    }, true);
+
+
+    $scope.$watch('location.search()', function() {
+        $scope.vno = ($location.search()).vno;
+    }, true);
+
 
 
 	
-	  /* $scope.player = $resource('/jsonapi/player').get();
 
-	    $scope.myVideos = 
-	    [ 
-		    {vName:'videoTitle1',vStatus:'true',img:'img/purposedrivenPlaceholder/Purpose Driven 1.jpg',desc: "Watch how Singpath owner plans to change the world !"},
-		    {vName:'videoTitle2',vStatus:'true',img:'img/purposedrivenPlaceholder/Purpose Driven 2.jpg',desc: "Microsoft talks about coding."},
-		    {vName:'videoTitle3',vStatus:'false',img:'img/purposedrivenPlaceholder/lock.jpg',desc: "Video is locked"},
-		    {vName:'videoTitle4',vStatus:'false',img:'img/purposedrivenPlaceholder/lock.jpg',desc: "Video is locked"},
 
-	    ];
+		$scope.videotoWatch = 0;
 
-	     	$scope.totalVideosUnlock =2;
-*/
-	
-
-	     $scope.get_videos = function(){
+	 $scope.get_videos = function(){
           console.log("get_purpose driven videos");
           $resource("/jsonapi/purposeVideos/ALL").get({},function(response){
-              $scope.purposeVideos = response;
+              $scope.purposeVideos = response; // purposeVideos stores the Json files
                console.log($scope.purposeVideos);
         	 })
         }
@@ -34,18 +41,61 @@ function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
               $scope.purposeVideosUnlocked = response;
                console.log($scope.purposeVideosUnlocked);
         	 })
-        }        
+        }      
 
-        $scope.testing = function() {
-        	alert("Need to unlock this testing");
 
+        $scope.get_test = function(address,no){
+        	$scope.videotoWatch = address;
+        	//window.location.replace('#/purposedriven-play?v=' +value);
+        	//$location.path('purposedriven-play')
+  			//alert(document.URL);
+  			//alert(value);
+  			 $location.search({'youtube':address,'vno':no}).path('purposedriven-play')
+        }  
+
+
+        $scope.nextVideo = function (vno,purposeVideo){
+			var vnoNumber = parseInt(vno);
+             if(purposeVideo.length-1 > vnoNumber)
+              {
+              $location.search({'youtube':purposeVideo[(vnoNumber+1)].vlink, 'vno':(vnoNumber+1)}).path('purposedriven-play') 
+              }
+              else{
+                alert (" Oops , no more");
+              }
+             
         }
 
 
-	  //  $scope.myVideos[0] {vName:"videoTitle1",vStatus:"unlock",};
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
 
 
 
