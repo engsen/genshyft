@@ -6,55 +6,68 @@
 
 <br> <center> <h1> Purpose Driven Videos</h1> </center> 
 
+
+
+
 <div class="container" style="position:relative;">
-	<div class="row-fluid">
 		<center> 
-			<table border = '1' width = 50%>
+			<table border = '1'  align = "center" >
 				<tr>
-					<th height = 30%> 
-						<img  src = "img/purposedrivenPlaceholder/PurposeDriven.jpg" height = '400px' </img>
+					<th> 
+						<img  src = "img/purposedrivenPlaceholder/PurposeDriven.jpg" width = 50%</img> 
 					</th> 
 				</tr> 
 			</table> 
 		</center> 
-		
 	</div>
-<div>
+
+
+
 
 
 
   	<div data-ng-controller="PurposeDrivenController" ng-init = "get_videos(); get_videos_unlocked()" > 
 
-
-{{ videotoWatch }}
   	
-  		<select ng-model="videoID" ng-options= "video.id as video.title for video in purposeVideos.Videos | orderBy:'title'"></select>
-
+  	<!-- <select ng-model="videoID" ng-options= "video.id as video.title for video in purposeVideos.Videos | orderBy:'title'"></select !-->
 			<center>
 			Select a video to view !
 
 
-				<table border = '1' width = 60%> 
+
+
+
+
+
+
+
+
+
+
+<div class="container" style="position:relative;">
+	<div class="row-fluid">
+		<div class = "span12">
+
+				<table border = '1' class = "span12"> 
 					<tr>
-						<td  ng-repeat = "video in purposeVideos.Videos" >
-								 <IMG ng-src="{{ video.image }}" width = 300px > 
+						<td  ng-repeat = "video in purposeVideos.Videos" class = "span2" >
+								 <IMG ng-src="{{ video.image }}" > 
 						</td>
 					</tr>			
 						<tr >
-							<td  ng-repeat = "video in purposeVideos.Videos" >
-									 {{ video.description }}
+							<td  ng-repeat = "video in purposeVideos.Videos" class = "span2" align = "middle">
+									 <br> {{ video.description }}
 							</td>
 							
 						</tr>
 
 						<tr >
 							<td  ng-repeat = "userVideo in purposeVideosUnlocked.Unlocked" >
-								<div ng-show="{{ userVideo.s }}">  
-									<button ng-click = "get_test(purposeVideos.Videos[userVideo.no].vlink,userVideo.no)"> {{ userVideo.no }} 
-									</button>
-
+								<center> <div ng-show="{{ userVideo.s }}">  
+								<button class="btn btn-inverse"  ng-click = "get_test(purposeVideos.Videos[userVideo.no].vlink,userVideo.no)">  Play  <!-- {{ userVideo.no }} !-->	</button> 
 								 </div>
-									 
+								 <div ng-hide="{{ userVideo.s }}"> Lock </div>
+								<center>	 
 							</td>
 							
 						</tr>
@@ -62,6 +75,10 @@
 				</table>
 			</center>
 </div>
+		</div>
+	</div>
+<div>
+
   	
 <script>
 
