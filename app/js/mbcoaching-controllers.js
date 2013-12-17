@@ -1,12 +1,20 @@
 'use strict';
 
-function mBCoachingController($scope,$resource,$cookieStore){
+function MBCoachingController($scope,$resource){
 	
-	$scope.coaches = ["Shannon","Sandra","Zander","Master Sergeant"];
-	$scope.progLanguage = ["Java", "Javascript", "Ruby","Python"];
-	$scope.userID = {};
+	//$scope.coaches = [];
+	//$scope.progLanguage = [];
+	//$scope.userID = {};
+	$scope.selectedPath = {};
 
-	$scope.saveFields=function($userID, $selectedCoach, $selectedLanguage){
+	$scope.print=function(){
+		$resource('/jsonapi/get_my_paths').get({},function(response){
+			$scope.selectedPath = response;
+			console.log($scope.selectedPath);
+		});
+		
+	}
+	/*$scope.saveFields=function($userID, $selectedCoach, $selectedLanguage){
 		var selectedFields = {"userID" : userID,
 					"selectedCoach" : selectedCoach,
 					"selectedLanguage" : selectedLanguage
@@ -23,7 +31,7 @@ function mBCoachingController($scope,$resource,$cookieStore){
 		
 	}
 
-
+	*/
 
 	//retrieve stored levels to improve
 	/*if($cookieStore.get("type")){
