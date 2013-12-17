@@ -54,11 +54,16 @@ function PurposeDrivenController($scope,$resource,$location,$cookieStore,$http){
         }  
 
 
-        $scope.nextVideo = function (vno,purposeVideo){
+        $scope.nextVideo = function (vno,purposeVideo,videosUnlock){
 			var vnoNumber = parseInt(vno);
              if(purposeVideo.length-1 > vnoNumber)
               {
-              $location.search({'youtube':purposeVideo[(vnoNumber+1)].vlink, 'vno':(vnoNumber+1)}).path('purposedriven-play') 
+                if(videosUnlock[(vnoNumber+1)].s == "false"){
+                  alert ("Next video unlock \n  no: " + videosUnlock[(vnoNumber+1)].no + " s: " + videosUnlock[(vnoNumber+1)].s + " --> true" );
+                }
+
+                // if lock, prompt lock
+                $location.search({'youtube':purposeVideo[(vnoNumber+1)].vlink, 'vno':(vnoNumber+1)}).path('purposedriven-play') 
               }
               else{
                 alert (" Oops , no more");
