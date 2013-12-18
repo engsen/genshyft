@@ -7,12 +7,27 @@ function MBCoachingController($scope,$resource){
 	//$scope.userID = {};
 	$scope.selectedPath = {};
 
-	$scope.print=function(){
+	//retrieves the user's paths
+	$scope.user_game_badges=function(){
 		$resource('/jsonapi/get_my_paths').get({},function(response){
 			$scope.selectedPath = response;
 			console.log($scope.selectedPath);
-		});
-		
+		});	
+	}
+
+	$scope.get_skipped_qns=function(){
+		$resource('/jsonapi/skippedQns').get({},function(response){
+			$scope.testing = response;
+			console.log($scope.testing);
+		})
+
+	}
+
+	$scope.get_poorly_attempted=function(){
+		$resource('/jsonapi/poorly_attempted').get({},function(response){
+			$scope.attemptedQns = response;
+			console.log($scope.attemptedQns);
+		})
 	}
 	/*$scope.saveFields=function($userID, $selectedCoach, $selectedLanguage){
 		var selectedFields = {"userID" : userID,
